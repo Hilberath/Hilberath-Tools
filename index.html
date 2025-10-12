@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hilberath Tools</title>
+    <meta name="description" content="Entdecke nützliche Tools und Programme für Entwickler - Hilberath Tools" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-icon-180x180.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="assets/img/favicon/manifest.json" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/root.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo-section">
+            <img src="assets/img/nav/logo.png.png" alt="Hilberath Tools" class="logo" />
+            <h1 class="site-title">Hilberath Tools</h1>
+          </div>
+
+          <div class="header-controls">
+            <!-- Language Selector -->
+            <div class="language-selector">
+              <select id="languageSelect" class="control-input">
+                <option value="de">🇩🇪 Deutsch</option>
+                <option value="en">🇬🇧 English</option>
+              </select>
+            </div>
+
+            <!-- Theme Toggle -->
+            <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+              <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5" />
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="container">
+        <!-- Search and Filter Section -->
+        <section class="search-section">
+          <div class="search-filter-container">
+            <div class="search-container">
+              <div class="search-input-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.35-4.35" />
+                </svg>
+                <input type="text" id="searchInput" class="search-input" placeholder="Suche nach Tools..." />
+                <div id="searchSuggestions" class="search-suggestions"></div>
+              </div>
+            </div>
+
+            <div class="filter-section">
+              <div class="filter-group">
+                <select id="categoryFilter" class="filter-select">
+                  <option value="">Alle Kategorien</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <select id="platformFilter" class="filter-select">
+                  <option value="">Alle Plattformen</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <select id="developerFilter" class="filter-select">
+                  <option value="">Alle Entwickler</option>
+                </select>
+              </div>
+
+              <div class="filter-group">
+                <button id="favoritesToggle" class="favorites-toggle">
+                  <svg class="favorites-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                  </svg>
+                  <span data-translate="favorites">Favoriten</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="tools-counter">
+              <span id="toolsCount" class="tools-count">0 Tools</span>
+            </div>
+
+            <button id="legendToggle" class="legend-toggle" data-translate="legend">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="legend-icon">
+                <path d="M9 12l2 2 4-4" />
+                <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3" />
+                <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3" />
+                <path d="M12 3c0 1-1 3-3 3s-3-2-3-3 1-3 3-3 3 2 3 3" />
+                <path d="M12 21c0-1 1-3 3-3s3 2 3 3-1 3-3 3-3-2-3-3" />
+              </svg>
+              <span>Legende</span>
+            </button>
+          </div>
+
+          <!-- Legend Panel -->
+          <div id="legendPanel" class="legend-panel" style="display: none">
+            <div class="legend-content">
+              <h3 data-translate="legend-title">Legende</h3>
+              <div class="legend-items">
+                <div class="legend-item">
+                  <div class="legend-indicator personal-usage-indicator"></div>
+                  <span data-translate="legend-personal-usage">Goldene Border: Tools, die ich persönlich aktiv nutze und empfehlen kann</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-indicator favorite-indicator">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg>
+                  </div>
+                  <span data-translate="legend-favorites">Herz-Icon: Zu Favoriten hinzufügen/entfernen</span>
+                </div>
+                <div class="legend-item">
+                  <div class="legend-indicator screenshot-indicator">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <polyline points="21,15 16,10 5,21" />
+                    </svg>
+                  </div>
+                  <span data-translate="legend-screenshots">Screenshots: Klicken für Vollbild-Ansicht</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tools Grid -->
+        <section class="tools-section">
+          <div id="toolsGrid" class="tools-grid">
+            <!-- Tools werden hier dynamisch geladen -->
+          </div>
+
+          <div id="loadingIndicator" class="loading-indicator">
+            <div class="spinner"></div>
+            <span data-translate="loading">Lade Tools...</span>
+          </div>
+
+          <div id="noResults" class="no-results" style="display: none">
+            <svg class="no-results-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.35-4.35" />
+            </svg>
+            <h3 data-translate="no-results-title">Keine Tools gefunden</h3>
+            <p data-translate="no-results-desc">Versuche andere Suchbegriffe oder Filter.</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Tool Details Modal -->
+    <div id="toolModal" class="modal" style="display: none">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button class="modal-close" id="modalClose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+
+        <div class="modal-header">
+          <img id="modalLogo" src="" alt="" class="modal-logo" />
+          <div class="modal-title-section">
+            <h2 id="modalTitle" class="modal-title"></h2>
+            <p id="modalDeveloper" class="modal-developer"></p>
+          </div>
+        </div>
+
+        <div class="modal-body">
+          <div class="modal-layout">
+            <!-- Left Column: Info Cards + Description -->
+            <div class="modal-left-column">
+              <!-- Info Cards -->
+              <div class="modal-info-cards">
+                <div class="info-card">
+                  <div class="info-card-header">
+                    <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                      <path d="M9 9h6v6H9z" />
+                    </svg>
+                    <span class="info-card-title" data-translate="category">Kategorie</span>
+                  </div>
+                  <div class="info-card-content">
+                    <span id="modalCategory" class="info-card-value"></span>
+                  </div>
+                </div>
+
+                <div class="info-card">
+                  <div class="info-card-header">
+                    <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12,6 12,12 16,14" />
+                    </svg>
+                    <span class="info-card-title" data-translate="release-date">Release</span>
+                  </div>
+                  <div class="info-card-content">
+                    <span id="modalReleaseDate" class="info-card-value"></span>
+                  </div>
+                </div>
+
+                <div class="info-card">
+                  <div class="info-card-header">
+                    <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                      <line x1="8" y1="21" x2="16" y2="21" />
+                      <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                    <span class="info-card-title" data-translate="platforms">Plattformen</span>
+                  </div>
+                  <div class="info-card-content">
+                    <div id="modalPlatforms" class="info-platforms"></div>
+                  </div>
+                </div>
+
+                <div class="info-card">
+                  <div class="info-card-header">
+                    <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M9 12l2 2 4-4" />
+                      <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3" />
+                      <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3" />
+                    </svg>
+                    <span class="info-card-title" data-translate="license">Lizenz</span>
+                  </div>
+                  <div class="info-card-content">
+                    <span id="modalLicense" class="info-card-value"></span>
+                  </div>
+                </div>
+
+                <div class="info-card">
+                  <div class="info-card-header">
+                    <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="12" y1="1" x2="12" y2="23" />
+                      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                    </svg>
+                    <span class="info-card-title" data-translate="pricing">Preismodell</span>
+                  </div>
+                  <div class="info-card-content">
+                    <div id="modalPricing" class="info-pricing"></div>
+                  </div>
+                </div>
+
+                <div class="info-card">
+                  <div class="info-card-header">
+                    <svg class="info-card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                      <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                    </svg>
+                    <span class="info-card-title" data-translate="links">Links</span>
+                  </div>
+                  <div class="info-card-content">
+                    <div id="modalLinks" class="info-links">
+                      <!-- Links werden hier dynamisch geladen -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <div class="modal-description-card">
+                <h3 data-translate="description">Beschreibung</h3>
+                <p id="modalDescription"></p>
+              </div>
+            </div>
+
+            <!-- Right Column: Screenshots -->
+            <div class="modal-right-column">
+              <div class="modal-screenshots-card" id="modalScreenshots">
+                <!-- Screenshots werden hier dynamisch geladen -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal" style="display: none">
+      <div class="modal-overlay"></div>
+      <div class="modal-content privacy-modal-content">
+        <button class="modal-close" id="privacyModalClose">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+
+        <div class="modal-header">
+          <h2 data-translate="privacy-policy-title">Datenschutzerklärung</h2>
+        </div>
+
+        <div class="modal-body">
+          <div class="privacy-content">
+            <p data-translate="privacy-policy-content">Diese Website sammelt und speichert folgende Daten:</p>
+
+            <ul class="privacy-list">
+              <li data-translate="privacy-data-theme">• Theme-Präferenz (hell/dunkel)</li>
+              <li data-translate="privacy-data-language">• Sprach-Präferenz (deutsch/englisch)</li>
+              <li data-translate="privacy-data-favorites">• Favorisierte Tools</li>
+            </ul>
+
+            <p data-translate="privacy-storage">Diese Daten werden ausschließlich lokal in Ihrem Browser gespeichert und nicht an externe Server übertragen.</p>
+
+            <p data-translate="privacy-cookies">Diese Website verwendet keine Cookies oder Tracking-Technologien.</p>
+
+            <p data-translate="privacy-contact">Bei Fragen zum Datenschutz kontaktieren Sie uns gerne.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fullscreen Screenshot Modal -->
+    <div id="fullscreenModal" class="fullscreen-modal">
+      <div class="fullscreen-content">
+        <button id="fullscreenClose" class="fullscreen-close" aria-label="Close fullscreen">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <img id="fullscreenImage" src="" alt="Fullscreen Screenshot" class="fullscreen-image" />
+        <div class="fullscreen-nav">
+          <button id="fullscreenPrev" class="fullscreen-nav-btn" aria-label="Previous screenshot">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15,18 9,12 15,6"></polyline>
+            </svg>
+          </button>
+          <span id="fullscreenCounter"></span>
+          <button id="fullscreenNext" class="fullscreen-nav-btn" aria-label="Next screenshot">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9,18 15,12 9,6"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-links">
+            <a href="https://discord.gg/5MFtHJUtGm" target="_blank" rel="noopener" class="social-link">
+              <img src="assets/img/svg/discord.svg" alt="Discord" class="social-icon" />
+            </a>
+            <a href="https://www.twitch.tv/david_hilberath_dev" target="_blank" rel="noopener" class="social-link">
+              <img src="assets/img/svg/twitch.svg" alt="Twitch" class="social-icon" />
+            </a>
+            <a href="https://www.youtube.com/@Hilberath" target="_blank" rel="noopener" class="social-link">
+              <img src="assets/img/svg/youtube.svg" alt="YouTube" class="social-icon" />
+            </a>
+            <a href="https://www.instagram.com/david_hilberath/" target="_blank" rel="noopener" class="social-link">
+              <img src="assets/img/svg/instagram.svg" alt="Instagram" class="social-icon" />
+            </a>
+            <a href="https://github.com/Hilberath" target="_blank" rel="noopener" class="social-link">
+              <img src="assets/img/svg/github.svg" alt="GitHub" class="social-icon" />
+            </a>
+          </div>
+
+          <div class="footer-legal">
+            <p>&copy; 2025 Hilberath.dev All rights reserved.</p>
+            <div class="footer-legal-links">
+              <a href="#" data-translate="imprint">Impressum</a>
+              <a href="#privacy" data-translate="privacy">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

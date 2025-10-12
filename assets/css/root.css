@@ -1,0 +1,60 @@
+:root {
+  /* Akzentfarbe */
+  --mainColor: #00a3e1;
+  --secColor: #d7f4ff;
+  --bgColor: #0e0f12;
+  --bgElevated: #151821;
+  --textColor: #e6e9ef;
+  --mutedText: #a7b0c0;
+  --borderColor: #242836;
+  --cardBg: #141822;
+  --cardHover: #1a2030;
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --warning: #f39c12;
+  --personalUsage: #00a3e1;
+  --personalUsageShadow: 0 8px 25px rgba(0, 163, 225, 0.2);
+  --personalUsageShadowHover: 0 20px 40px rgba(0, 163, 225, 0.3);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --controlHeight: 44px;
+  --radius: 12px;
+
+  /* Pricing backgrounds (dark) */
+  --pricingFreeBg: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  --pricingSubscriptionBg: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  --pricingOneTimePaymentBg: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --pricingTrialBg: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+  --pricingTextOnDark: #ffffff;
+  --pricingShadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+
+  /* Info-Card Top Border (hover) */
+  --infoCardTopBorderStart: var(--mainColor);
+  --infoCardTopBorderEnd: var(--secColor);
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] {
+  --bgColor: #f6f7fb;
+  --bgElevated: #ffffff;
+  --textColor: #1c2333;
+  --mutedText: #55607a;
+  --borderColor: #e6e8ee;
+  --cardBg: #ffffff;
+  --cardHover: #f1f3f9;
+  --personalUsage: #00a3e1;
+  --personalUsageShadow: 0 8px 25px rgba(0, 163, 225, 0.2);
+  --personalUsageShadowHover: 0 20px 40px rgba(0, 163, 225, 0.3);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  /* Pricing backgrounds (light) */
+  --pricingFreeBg: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  --pricingSubscriptionBg: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  --pricingOneTimePaymentBg: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  --pricingTrialBg: linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%);
+  --pricingTextOnDark: #ffffff;
+  --pricingShadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+  /* Info-Card Top Border (hover) */
+  --infoCardTopBorderStart: var(--mainColor);
+  --infoCardTopBorderEnd: var(--secColor);
+}
