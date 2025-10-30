@@ -2534,6 +2534,32 @@
         "github": "https://github.com/realtime-colors"
       },
       "personalUsage": true
+    },
+    {
+      "id": "ngrok",
+      "name": "ngrok",
+      "developer": "ngrok, Inc.",
+      "category": "Developer Tool",
+      "platforms": ["Windows", "macOS", "Linux"],
+      "releaseDate": "2013-01-01 (geschätzt)",
+      "license": "Freemium",
+      "pricing": ["Free", "Paid Plans"],
+      "description": {
+        "de": "ngrok ist ein **Tunneling- und Reverse-Proxy-Tool**, das Entwicklern ermöglicht, **lokale Server über sichere öffentliche URLs zugänglich zu machen**. Es wird häufig genutzt, um Webhooks, APIs oder lokale Webprojekte zu testen, ohne sie auf einen externen Server hochladen zu müssen. Nach der Installation kann ngrok per einfachem Befehl wie `ngrok http 80` gestartet werden und erstellt automatisch eine **HTTPS-URL**, die Anfragen an den lokalen Port weiterleitet. Entwickler können damit z. B. lokale Websites, Laravel- oder Node.js-Projekte, oder Webhooks von Diensten wie Stripe oder Slack testen. Die kostenlose Version erlaubt temporäre öffentliche Tunnels, während kostenpflichtige Pläne zusätzliche Funktionen wie **benutzerdefinierte Subdomains, reservierte Domains und erweiterte Sicherheitsoptionen** bieten.",
+        "en": "ngrok is a **tunneling and reverse proxy tool** that allows developers to **expose local servers to the internet through secure public URLs**. It is widely used for testing webhooks, APIs, or local web projects without needing to deploy them to a live server. Once installed, ngrok can be launched with a simple command like `ngrok http 80`, automatically creating a **public HTTPS URL** that forwards traffic to a local port. Developers often use it to test local websites, Laravel or Node.js projects, or webhook integrations from services like Stripe or Slack. The free version provides temporary tunnels, while paid plans offer **custom subdomains, reserved domains, and advanced security features**."
+      },
+      "shortDescription": {
+        "de": "Tool zur sicheren Freigabe lokaler Server über das Internet",
+        "en": "Tool for securely exposing local servers to the internet"
+      },
+      "logo": "assets/img/utilities/ngrok/logo/ngrok.png",
+      "screenshots": [],
+      "links": {
+        "website": "https://ngrok.com/",
+        "documentation": "https://ngrok.com/docs",
+        "github": "https://github.com/inconshreveable/ngrok"
+      },
+      "personalUsage": true
     }
   ]
 }
