@@ -133,7 +133,7 @@
       "id": "notepad++",
       "name": "Notepad++",
       "developer": "Don Ho",
-      "category": "Code-Editor",
+      "category": "Code Editor",
       "platforms": ["windows"],
       "releaseDate": "2003-11-24",
       "license": "GPLv2",
