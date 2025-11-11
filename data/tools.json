@@ -2560,6 +2560,32 @@
         "github": "https://github.com/inconshreveable/ngrok"
       },
       "personalUsage": true
+    },
+    {
+      "id": "caniuse",
+      "name": "Can I use",
+      "developer": "Alexis Deveria",
+      "category": "Web Development Tool",
+      "platforms": ["web"],
+      "releaseDate": "2009-01-01",
+      "license": "CC BY 4.0",
+      "pricing": ["Free"],
+      "description": {
+        "de": "Can I use ist ein Online-Tool, das Webentwicklern hilft, die Browserunterstützung für Webstandards und Frontend-Technologien wie HTML, CSS, SVG und JavaScript-APIs zu überprüfen. Die Plattform bietet detaillierte Kompatibilitätsinformationen für verschiedene Browser und Versionen und wird regelmäßig mit aktuellen Daten aus Browser-Engines wie Chrome, Firefox, Safari und Edge aktualisiert. Durch die übersichtliche Darstellung in Tabellenform ermöglicht Can I use Entwicklern, fundierte Entscheidungen über den Einsatz bestimmter Webtechnologien zu treffen, um eine optimale Kompatibilität ihrer Projekte zu gewährleisten.",
+        "en": "Can I use is an online tool that helps web developers check browser support for web standards and front-end technologies such as HTML, CSS, SVG, and JavaScript APIs. The platform provides detailed compatibility data for various browsers and versions and is regularly updated with the latest information from browser engines like Chrome, Firefox, Safari, and Edge. With its clear, tabular interface, Can I use enables developers to make informed decisions about using specific web technologies to ensure optimal compatibility across projects."
+      },
+      "shortDescription": {
+        "de": "Tool zur Überprüfung der Browserkompatibilität von Webtechnologien",
+        "en": "Tool for checking browser compatibility of web technologies"
+      },
+      "logo": "assets/img/utilities/caniuse/logo/caniuse.png",
+      "screenshots": ["assets/img/utilities/caniuse/screenshots/caniuse_screenshot.png"],
+      "links": {
+        "website": "https://caniuse.com/",
+        "github": "https://github.com/Fyrd/caniuse",
+        "documentation": "https://caniuse.com/usage-table"
+      },
+      "personalUsage": true
     }
   ]
 }
