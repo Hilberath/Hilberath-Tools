@@ -2582,8 +2582,7 @@
       "screenshots": ["assets/img/utilities/caniuse/screenshots/caniuse_screenshot.png"],
       "links": {
         "website": "https://caniuse.com/",
-        "github": "https://github.com/Fyrd/caniuse",
-        "documentation": "https://caniuse.com/usage-table"
+        "github": "https://github.com/Fyrd/caniuse"
       },
       "personalUsage": true
     }
