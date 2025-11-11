@@ -649,7 +649,7 @@
       "id": "onsenui",
       "name": "Onsen UI",
       "developer": "Monaca (Asial Corporation)",
-      "category": "Mobile UI Framework",
+      "category": "UI Framework",
       "platforms": ["framework-Library"],
       "releaseDate": "2014-06-13",
       "license": "MIT License",
