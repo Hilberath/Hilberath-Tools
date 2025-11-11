@@ -1508,7 +1508,7 @@
       "id": "putty",
       "name": "PuTTY",
       "developer": "Simon Tatham (und Contributoren)",
-      "category": "Terminal ",
+      "category": "Terminal",
       "platforms": ["windows"],
       "releaseDate": "1999-07-08",
       "license": "MIT License",
